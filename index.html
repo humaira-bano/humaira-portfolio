@@ -14,60 +14,33 @@
     scroll-behavior:smooth;
 }
 
-:root{
-    --bg:#f7f8fc;
-    --card:#ffffff;
-    --text:#171827;
-    --muted:#666979;
-    --primary:#6c63ff;
-    --primary-dark:#554cf0;
-    --border:#e7e7ef;
-    --shadow:0 15px 40px rgba(30,30,60,0.08);
-}
-
-body.dark{
-    --bg:#11121a;
-    --card:#1b1d29;
-    --text:#f5f5ff;
-    --muted:#b5b6c5;
-    --border:#303241;
-    --shadow:0 15px 40px rgba(0,0,0,0.25);
-}
-
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--bg);
-    color:var(--text);
+    font-family:Arial, sans-serif;
+    background:#f7f9fc;
+    color:#18233a;
     line-height:1.6;
     transition:0.3s;
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
+body.dark{
+    background:#111827;
+    color:#f3f4f6;
 }
-
-.container{
-    width:90%;
-    max-width:1150px;
-    margin:auto;
-}
-
-/* NAVBAR */
 
 nav{
     position:sticky;
     top:0;
     z-index:1000;
-    background:var(--card);
-    border-bottom:1px solid var(--border);
-}
-
-.nav-inner{
-    min-height:70px;
+    background:rgba(255,255,255,0.95);
+    padding:18px 7%;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    box-shadow:0 2px 15px rgba(0,0,0,0.08);
+}
+
+.dark nav{
+    background:#172033;
 }
 
 .logo{
@@ -75,146 +48,128 @@ nav{
     font-weight:bold;
 }
 
-.logo span{
-    color:var(--primary);
-}
-
 .nav-links{
     display:flex;
     gap:25px;
-    align-items:center;
+    list-style:none;
 }
 
 .nav-links a{
-    font-size:14px;
-    font-weight:bold;
-    color:var(--muted);
+    text-decoration:none;
+    color:inherit;
+    font-weight:600;
 }
 
 .nav-links a:hover{
-    color:var(--primary);
+    color:#1976d2;
 }
 
-.dark-btn{
-    border:1px solid var(--border);
-    background:var(--bg);
-    color:var(--text);
-    padding:9px 12px;
-    border-radius:10px;
+.theme-btn{
+    border:none;
+    background:#eef3f9;
+    padding:10px 13px;
+    border-radius:50%;
     cursor:pointer;
-    font-size:16px;
+    font-size:18px;
 }
 
-/* HERO */
+.dark .theme-btn{
+    background:#273449;
+}
+
+section{
+    padding:80px 7%;
+}
 
 .hero{
-    padding:100px 0 70px;
-}
-
-.hero-grid{
-    display:grid;
-    grid-template-columns:1.3fr 0.7fr;
-    gap:50px;
+    min-height:88vh;
+    display:flex;
     align-items:center;
+    justify-content:space-between;
+    gap:40px;
 }
 
-.badge{
-    display:inline-block;
-    background:#ecebff;
-    color:var(--primary);
-    padding:8px 14px;
-    border-radius:30px;
-    font-size:14px;
+.hero-text{
+    max-width:650px;
+}
+
+.hello{
+    color:#1976d2;
     font-weight:bold;
-    margin-bottom:20px;
-}
-
-body.dark .badge{
-    background:#292741;
 }
 
 .hero h1{
     font-size:58px;
-    line-height:1.05;
-    margin-bottom:15px;
-}
-
-.hero h1 span{
-    color:var(--primary);
+    margin:10px 0;
 }
 
 .hero h2{
-    font-size:25px;
+    font-size:28px;
     margin-bottom:18px;
 }
 
 .hero p{
-    color:var(--muted);
-    max-width:650px;
+    color:#667085;
     font-size:17px;
+    margin-bottom:25px;
+}
+
+.dark .hero p,
+.dark .section-subtitle,
+.dark .card p,
+.dark .project-description{
+    color:#b9c2d0;
 }
 
 .hero-buttons{
     display:flex;
     gap:15px;
-    margin-top:30px;
     flex-wrap:wrap;
 }
 
 .btn{
     display:inline-block;
-    padding:13px 21px;
-    border-radius:10px;
+    padding:13px 20px;
+    border-radius:9px;
+    text-decoration:none;
     font-weight:bold;
-    transition:0.2s;
+    border:1px solid #1976d2;
 }
 
-.primary-btn{
-    background:var(--primary);
+.primary{
+    background:#1976d2;
     color:white;
 }
 
-.primary-btn:hover{
-    background:var(--primary-dark);
-    transform:translateY(-2px);
+.secondary{
+    color:#1976d2;
+    background:white;
 }
 
-.secondary-btn{
-    border:1px solid var(--border);
-    background:var(--card);
-}
-
-.secondary-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:var(--shadow);
+.dark .secondary{
+    background:#172033;
 }
 
 .hero-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:25px;
-    padding:35px;
-    box-shadow:var(--shadow);
+    width:330px;
+    padding:45px 30px;
+    background:white;
+    border-radius:22px;
     text-align:center;
+    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+}
+
+.dark .hero-card,
+.dark .card,
+.dark .project-box,
+.dark .case-card,
+.dark .contact-box{
+    background:#172033;
 }
 
 .hero-icon{
-    font-size:80px;
+    font-size:60px;
     margin-bottom:15px;
-}
-
-.hero-card h3{
-    margin-bottom:8px;
-}
-
-.hero-card p{
-    font-size:14px;
-}
-
-/* GENERAL */
-
-section{
-    padding:80px 0;
 }
 
 .section-heading{
@@ -222,22 +177,21 @@ section{
     margin-bottom:45px;
 }
 
-.section-heading .small{
-    color:var(--primary);
+.section-label{
+    color:#1976d2;
     font-weight:bold;
     font-size:14px;
+    letter-spacing:1px;
 }
 
 .section-heading h2{
-    font-size:36px;
+    font-size:38px;
     margin:8px 0;
 }
 
-.section-heading p{
-    color:var(--muted);
+.section-subtitle{
+    color:#667085;
 }
-
-/* ABOUT */
 
 .about-grid{
     display:grid;
@@ -245,36 +199,24 @@ section{
     gap:25px;
 }
 
-.info-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
+.card{
+    background:white;
     padding:30px;
-    box-shadow:var(--shadow);
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
 }
 
-.info-card h3{
+.card h3{
     margin-bottom:15px;
 }
 
-.info-card p{
-    color:var(--muted);
-}
-
-.goal-list{
+.goals{
     list-style:none;
 }
 
-.goal-list li{
-    padding:10px 0;
-    border-bottom:1px solid var(--border);
+.goals li{
+    margin:13px 0;
 }
-
-.goal-list li:last-child{
-    border-bottom:none;
-}
-
-/* SKILLS */
 
 .skills-grid{
     display:grid;
@@ -283,173 +225,117 @@ section{
 }
 
 .skill-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
+    background:white;
     padding:25px;
-    box-shadow:var(--shadow);
-    transition:0.2s;
-}
-
-.skill-card:hover{
-    transform:translateY(-5px);
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
 }
 
 .skill-top{
     display:flex;
     justify-content:space-between;
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
-.skill-icon{
-    font-size:27px;
-}
-
-.skill-level{
-    font-size:12px;
-    color:var(--muted);
-}
-
-.bar{
+.progress{
     height:8px;
-    background:var(--border);
-    border-radius:20px;
+    background:#e5e7eb;
+    border-radius:10px;
     overflow:hidden;
 }
 
-.bar span{
+.progress span{
     display:block;
     height:100%;
-    background:var(--primary);
-    border-radius:20px;
+    background:#1976d2;
+    border-radius:10px;
 }
 
-/* PROJECT */
-
-.featured{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:25px;
+.project-box{
+    background:white;
     padding:35px;
-    box-shadow:var(--shadow);
+    border-radius:22px;
+    box-shadow:0 10px 35px rgba(0,0,0,0.07);
 }
 
-.project-top{
+.project-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:35px;
     align-items:center;
 }
 
-.project-window{
-    background:#171827;
+.project-preview{
+    background:#172b5b;
+    min-height:260px;
     border-radius:18px;
-    padding:20px;
-    color:white;
-    min-height:280px;
-}
-
-.window-top{
     display:flex;
-    gap:7px;
-    margin-bottom:20px;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:45px;
 }
 
-.dot{
-    width:10px;
-    height:10px;
-    background:#777;
-    border-radius:50%;
-}
-
-.mock-dashboard{
-    display:grid;
-    grid-template-columns:80px 1fr;
-    gap:12px;
-}
-
-.mock-sidebar{
-    background:#27293a;
-    border-radius:10px;
-    min-height:190px;
-}
-
-.mock-content{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-}
-
-.mock-box{
-    background:#292b40;
-    border-radius:10px;
-    min-height:75px;
-}
-
-.project-info h3{
+.project-box h3{
     font-size:32px;
     margin-bottom:10px;
 }
 
-.project-info p{
-    color:var(--muted);
+.project-description{
+    color:#667085;
+    margin-bottom:18px;
 }
 
 .feature-list{
     list-style:none;
-    margin:20px 0;
+    margin-bottom:20px;
 }
 
 .feature-list li{
-    padding:6px 0;
+    margin:9px 0;
 }
 
 .tags{
     display:flex;
-    flex-wrap:wrap;
     gap:8px;
-    margin:20px 0;
+    flex-wrap:wrap;
+    margin-bottom:20px;
 }
 
 .tag{
+    background:#eaf3ff;
+    color:#1976d2;
     padding:6px 10px;
-    background:#eeedff;
-    color:var(--primary);
     border-radius:20px;
-    font-size:12px;
-    font-weight:bold;
-}
-
-body.dark .tag{
-    background:#292741;
+    font-size:13px;
 }
 
 .project-buttons{
     display:flex;
-    gap:10px;
+    gap:12px;
     flex-wrap:wrap;
 }
 
 .project-btn{
     padding:11px 16px;
-    border-radius:9px;
-    font-size:14px;
+    border-radius:8px;
+    text-decoration:none;
     font-weight:bold;
 }
 
 .live-btn{
-    background:var(--primary);
+    background:#1976d2;
     color:white;
 }
 
 .code-btn{
-    border:1px solid var(--border);
+    background:#eef2f7;
+    color:#18233a;
 }
 
-/* CASE STUDY */
-
-.case-study{
-    margin-top:30px;
+.dark .code-btn{
+    background:#273449;
+    color:white;
 }
 
 .case-grid{
@@ -459,40 +345,33 @@ body.dark .tag{
 }
 
 .case-card{
-    background:var(--card);
-    border:1px solid var(--border);
+    background:white;
+    padding:28px;
     border-radius:18px;
-    padding:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
 }
 
-.case-card span{
-    font-size:25px;
+.case-icon{
+    font-size:30px;
+    margin-bottom:12px;
 }
 
 .case-card h3{
-    margin:12px 0 8px;
+    margin-bottom:10px;
 }
 
-.case-card p{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* SCREENSHOTS */
-
-.screenshot-gallery{
+.gallery{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:25px;
+    gap:22px;
 }
 
 .screenshot-card{
-    background:var(--card);
-    border:1px solid var(--border);
+    background:white;
     border-radius:18px;
     overflow:hidden;
-    box-shadow:var(--shadow);
-    transition:0.25s;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
 }
 
 .screenshot-card:hover{
@@ -501,19 +380,18 @@ body.dark .tag{
 
 .screenshot-card img{
     width:100%;
-    height:310px;
+    height:300px;
     object-fit:cover;
     display:block;
-    background:#eee;
 }
 
 .screenshot-info{
-    padding:20px;
+    padding:18px;
 }
 
-.screenshot-number{
-    color:var(--primary);
-    font-size:12px;
+.screenshot-info span{
+    color:#1976d2;
+    font-size:13px;
     font-weight:bold;
 }
 
@@ -521,88 +399,21 @@ body.dark .tag{
     margin:5px 0;
 }
 
-.screenshot-info p{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* LEARNING */
-
-.learning-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
-
-.learning-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:22px;
-    text-align:center;
-}
-
-.learning-card div{
-    font-size:30px;
-}
-
-.learning-card h3{
-    margin:8px 0;
-    font-size:17px;
-}
-
-.learning-card p{
-    color:var(--muted);
-    font-size:13px;
-}
-
-/* FUTURE PROJECTS */
-
-.future-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-}
-
-.future-card{
-    padding:30px;
-    border:1px solid var(--border);
-    border-radius:18px;
-    background:var(--card);
-}
-
-.future-card h3{
-    margin:10px 0;
-}
-
-.future-card p{
-    color:var(--muted);
-}
-
-/* CONTACT */
-
 .contact-grid{
     display:grid;
-    grid-template-columns:0.8fr 1.2fr;
+    grid-template-columns:1fr 1fr;
     gap:25px;
 }
 
-.contact-card,
-.contact-form{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
+.contact-box{
+    background:white;
     padding:30px;
-    box-shadow:var(--shadow);
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
 }
 
 .contact-item{
-    padding:15px 0;
-    border-bottom:1px solid var(--border);
-}
-
-.contact-item:last-child{
-    border-bottom:none;
+    margin:20px 0;
 }
 
 .contact-item strong{
@@ -610,61 +421,71 @@ body.dark .tag{
     margin-bottom:4px;
 }
 
-.contact-item span{
-    color:var(--muted);
-}
-
 form input,
 form textarea{
     width:100%;
     padding:13px;
     margin-bottom:15px;
-    border:1px solid var(--border);
-    border-radius:9px;
-    background:var(--bg);
-    color:var(--text);
+    border:1px solid #d8dee8;
+    border-radius:8px;
     font-family:inherit;
 }
 
 form textarea{
-    min-height:140px;
+    min-height:130px;
     resize:vertical;
 }
 
 form button{
     border:none;
     cursor:pointer;
+    width:100%;
+    padding:13px;
+    border-radius:8px;
+    background:#1976d2;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
 }
-
-/* FOOTER */
 
 footer{
-    margin-top:50px;
-    padding:30px 0;
-    border-top:1px solid var(--border);
     text-align:center;
+    padding:30px;
+    background:#18233a;
+    color:white;
 }
 
-footer p{
-    color:var(--muted);
-    font-size:14px;
+.dark footer{
+    background:#0b1220;
 }
-
-/* RESPONSIVE */
 
 @media(max-width:850px){
 
     .nav-links{
-        gap:10px;
+        gap:12px;
+        font-size:14px;
     }
 
-    .nav-links a{
-        font-size:12px;
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:60px;
     }
 
-    .hero-grid,
-    .project-top,
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero h2{
+        font-size:23px;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
     .about-grid,
+    .project-grid,
     .contact-grid{
         grid-template-columns:1fr;
     }
@@ -676,66 +497,49 @@ footer p{
     .case-grid{
         grid-template-columns:1fr;
     }
-
-    .learning-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .hero h1{
-        font-size:45px;
-    }
 }
 
 @media(max-width:600px){
 
-    .nav-inner{
-        flex-wrap:wrap;
-        padding:12px 0;
+    nav{
+        padding:15px 4%;
     }
 
-    .nav-links{
-        width:100%;
-        justify-content:center;
-        flex-wrap:wrap;
-        margin-top:10px;
-    }
-
-    .hero{
-        padding-top:60px;
-    }
-
-    .hero h1{
-        font-size:38px;
-    }
-
-    .hero h2{
+    .logo{
         font-size:20px;
     }
 
-    section{
-        padding:60px 0;
+    .nav-links{
+        display:none;
     }
 
-    .section-heading h2{
-        font-size:30px;
+    section{
+        padding:60px 5%;
+    }
+
+    .hero h1{
+        font-size:36px;
     }
 
     .skills-grid,
-    .screenshot-gallery,
-    .future-grid,
-    .learning-grid{
+    .gallery{
         grid-template-columns:1fr;
     }
 
-    .screenshot-card img{
-        height:250px;
+    .hero-card{
+        width:100%;
     }
 
-    .featured,
-    .info-card,
-    .contact-card,
-    .contact-form{
+    .project-box{
         padding:22px;
+    }
+
+    .project-preview{
+        min-height:200px;
+    }
+
+    .screenshot-card img{
+        height:230px;
     }
 }
 </style>
@@ -744,707 +548,660 @@ footer p{
 <body>
 
 <!-- NAVBAR -->
-
 <nav>
-<div class="container nav-inner">
+    <div class="logo">Humaira.</div>
 
-<a href="#home" class="logo">Humaira<span>.</span></a>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
-<div class="nav-links">
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-
-<button class="dark-btn" onclick="toggleDarkMode()" id="darkButton">
-🌙
-</button>
-</div>
-
-</div>
+    <button class="theme-btn" onclick="toggleDarkMode()">🌙</button>
 </nav>
 
 
-<!-- HERO -->
-
+<!-- HOME -->
 <section class="hero" id="home">
 
-<div class="container hero-grid">
+    <div class="hero-text">
 
-<div>
+        <div class="hello">👋 Hello, I'm</div>
 
-<span class="badge">👋 Hello, I'm</span>
+        <h1>Humaira 👩‍💻</h1>
 
-<h1>Humaira <span>👩‍💻</span></h1>
+        <h2>Aspiring Web Developer & UI/UX Designer</h2>
 
-<h2>Aspiring Web Developer & UI/UX Designer</h2>
+        <p>
+            I am learning web development and UI/UX design by building
+            real, useful and creative projects. My goal is to become
+            a confident developer and create digital experiences that
+            are simple, beautiful and useful.
+        </p>
 
-<p>
-I am learning web development and UI/UX design by building real,
-useful and creative projects. My goal is to become a confident
-developer and create digital experiences that are simple, beautiful
-and useful.
-</p>
+        <div class="hero-buttons">
+            <a href="#projects" class="btn primary">
+                🚀 View My Projects
+            </a>
 
-<div class="hero-buttons">
-<a href="#projects" class="btn primary-btn">🚀 View My Projects</a>
-<a href="#contact" class="btn secondary-btn">📩 Contact Me</a>
-</div>
+            <a href="#contact" class="btn secondary">
+                📩 Contact Me
+            </a>
+        </div>
 
-</div>
+    </div>
 
 
-<div class="hero-card">
+    <div class="hero-card">
 
-<div class="hero-icon">💻</div>
+        <div class="hero-icon">💻</div>
 
-<h3>What I Love Building</h3>
+        <h3>What I Love Building</h3>
 
-<p>
-Interactive websites, productivity tools,
-clean user interfaces and meaningful digital experiences.
-</p>
+        <p>
+            Interactive websites, productivity tools,
+            user-friendly interfaces and meaningful
+            digital experiences.
+        </p>
 
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
 <!-- ABOUT -->
-
 <section id="about">
 
-<div class="container">
+    <div class="section-heading">
 
-<div class="section-heading">
-<span class="small">ABOUT ME</span>
-<h2>My Journey 🌱</h2>
-<p>A little about who I am and what I'm working toward.</p>
-</div>
+        <div class="section-label">ABOUT ME</div>
 
+        <h2>My Journey 🌱</h2>
 
-<div class="about-grid">
+        <p class="section-subtitle">
+            A little about who I am and what I'm working toward.
+        </p>
 
-<div class="info-card">
-
-<h3>🌱 My Journey</h3>
-
-<p>
-I started learning coding because I wanted to understand how
-websites and applications actually work. Instead of only learning
-theory, I decided to build projects and learn through practice.
-</p>
-
-<br>
-
-<p>
-My current focus is HTML, CSS, JavaScript, Python and UI/UX design.
-I am continuously improving my problem-solving, design and development
-skills.
-</p>
-
-</div>
+    </div>
 
 
-<div class="info-card">
+    <div class="about-grid">
 
-<h3>🚀 What I'm Working Toward</h3>
+        <div class="card">
 
-<ul class="goal-list">
+            <h3>🌱 My Journey</h3>
 
-<li>💻 Become a strong Web Developer</li>
-<li>🎨 Improve UI/UX Design skills</li>
-<li>🐍 Build useful Python projects</li>
-<li>🚀 Create unique real-world projects</li>
-<li>💼 Become financially independent</li>
+            <p>
+                I started learning coding because I wanted to understand
+                how websites and applications actually work. Instead of
+                only learning theory, I decided to build projects and
+                learn through practice.
+            </p>
 
-</ul>
+            <br>
 
-</div>
+            <p>
+                My current focus is HTML, CSS, JavaScript, Python and
+                UI/UX design. I am continuously improving my problem-solving,
+                design and development skills.
+            </p>
 
-</div>
+        </div>
 
-</div>
+
+        <div class="card">
+
+            <h3>🚀 What I'm Working Toward</h3>
+
+            <ul class="goals">
+
+                <li>💻 Become a strong Web Developer</li>
+
+                <li>🎨 Improve UI/UX Design skills</li>
+
+                <li>🐍 Build useful Python projects</li>
+
+                <li>🚀 Create unique real-world projects</li>
+
+                <li>💼 Become financially independent</li>
+
+            </ul>
+
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- SKILLS -->
-
 <section id="skills">
 
-<div class="container">
+    <div class="section-heading">
 
-<div class="section-heading">
-<span class="small">MY SKILLS</span>
-<h2>Tools & Technologies 🛠️</h2>
-<p>Technologies I'm learning and using to build projects.</p>
-</div>
+        <div class="section-label">MY SKILLS</div>
 
+        <h2>Tools & Technologies 🛠️</h2>
 
-<div class="skills-grid">
+        <p class="section-subtitle">
+            Technologies I'm learning and using to build projects.
+        </p>
 
-<div class="skill-card">
-<div class="skill-top">
-<span class="skill-icon">🌐</span>
-<span class="skill-level">Strong Foundation</span>
-</div>
-<h3>HTML</h3>
-<div class="bar"><span style="width:85%"></span></div>
-</div>
+    </div>
 
 
-<div class="skill-card">
-<div class="skill-top">
-<span class="skill-icon">🎨</span>
-<span class="skill-level">Learning</span>
-</div>
-<h3>CSS</h3>
-<div class="bar"><span style="width:75%"></span></div>
-</div>
+    <div class="skills-grid">
+
+        <div class="skill-card">
+
+            <div class="skill-top">
+                <strong>🌐 HTML</strong>
+                <small>Strong Foundation</small>
+            </div>
+
+            <div class="progress">
+                <span style="width:90%"></span>
+            </div>
+
+        </div>
 
 
-<div class="skill-card">
-<div class="skill-top">
-<span class="skill-icon">⚡</span>
-<span class="skill-level">Learning</span>
-</div>
-<h3>JavaScript</h3>
-<div class="bar"><span style="width:65%"></span></div>
-</div>
+        <div class="skill-card">
+
+            <div class="skill-top">
+                <strong>🎨 CSS</strong>
+                <small>Learning</small>
+            </div>
+
+            <div class="progress">
+                <span style="width:82%"></span>
+            </div>
+
+        </div>
 
 
-<div class="skill-card">
-<div class="skill-top">
-<span class="skill-icon">🐍</span>
-<span class="skill-level">Learning</span>
-</div>
-<h3>Python</h3>
-<div class="bar"><span style="width:50%"></span></div>
-</div>
+        <div class="skill-card">
+
+            <div class="skill-top">
+                <strong>⚡ JavaScript</strong>
+                <small>Learning</small>
+            </div>
+
+            <div class="progress">
+                <span style="width:72%"></span>
+            </div>
+
+        </div>
 
 
-<div class="skill-card">
-<div class="skill-top">
-<span class="skill-icon">🎨</span>
-<span class="skill-level">Learning</span>
-</div>
-<h3>UI/UX Design</h3>
-<div class="bar"><span style="width:60%"></span></div>
-</div>
+        <div class="skill-card">
+
+            <div class="skill-top">
+                <strong>🐍 Python</strong>
+                <small>Learning</small>
+            </div>
+
+            <div class="progress">
+                <span style="width:55%"></span>
+            </div>
+
+        </div>
 
 
-<div class="skill-card">
-<div class="skill-top">
-<span class="skill-icon">🖌️</span>
-<span class="skill-level">Learning</span>
-</div>
-<h3>Figma</h3>
-<div class="bar"><span style="width:55%"></span></div>
-</div>
+        <div class="skill-card">
 
-</div>
+            <div class="skill-top">
+                <strong>🎨 UI/UX Design</strong>
+                <small>Learning</small>
+            </div>
 
-</div>
+            <div class="progress">
+                <span style="width:65%"></span>
+            </div>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-top">
+                <strong>🖌️ Figma</strong>
+                <small>Learning</small>
+            </div>
+
+            <div class="progress">
+                <span style="width:60%"></span>
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- PROJECTS -->
-
 <section id="projects">
 
-<div class="container">
+    <div class="section-heading">
 
-<div class="section-heading">
-<span class="small">FEATURED PROJECT</span>
-<h2>StudyFlow 📚</h2>
-<p>My personal student productivity system.</p>
-</div>
+        <div class="section-label">FEATURED PROJECT</div>
 
+        <h2>StudyFlow 📚</h2>
 
-<div class="featured">
+        <p class="section-subtitle">
+            My personal student productivity system.
+        </p>
 
-<div class="project-top">
-
-<div class="project-window">
-
-<div class="window-top">
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-</div>
-
-<div class="mock-dashboard">
-
-<div class="mock-sidebar"></div>
-
-<div class="mock-content">
-<div class="mock-box"></div>
-<div class="mock-box"></div>
-<div class="mock-box"></div>
-<div class="mock-box"></div>
-</div>
-
-</div>
-
-</div>
+    </div>
 
 
-<div class="project-info">
+    <div class="project-box">
 
-<h3>StudyFlow</h3>
+        <div class="project-grid">
 
-<p>
-A personal study planner designed to help students organize
-tasks, maintain focus and understand their study progress.
-</p>
-
-
-<ul class="feature-list">
-<li>✅ Task Management</li>
-<li>📊 Progress Tracking</li>
-<li>⏱️ Pomodoro Focus Timer</li>
-<li>🎯 Daily Study Goals</li>
-<li>📈 Analytics</li>
-<li>💡 Smart Suggestions</li>
-</ul>
+            <div class="project-preview">
+                📚💻
+            </div>
 
 
-<div class="tags">
-<span class="tag">HTML</span>
-<span class="tag">CSS</span>
-<span class="tag">JavaScript</span>
-<span class="tag">LocalStorage</span>
-</div>
+            <div>
+
+                <h3>StudyFlow</h3>
+
+                <p class="project-description">
+                    A personal study planner designed to help students
+                    organize tasks, maintain focus and understand their
+                    study progress.
+                </p>
 
 
-<div class="project-buttons">
+                <ul class="feature-list">
 
-<a href="https://humaira-bano.github.io/StudyFlow/"
-class="project-btn live-btn"
-target="_blank">
-🌐 Live Project
-</a>
+                    <li>✅ Task Management</li>
 
-<a href="https://github.com/humaira-bano/StudyFlow"
-class="project-btn code-btn"
-target="_blank">
-💻 View Code
-</a>
+                    <li>📊 Progress Tracking</li>
 
-</div>
+                    <li>⏱️ Pomodoro Focus Timer</li>
 
-</div>
+                    <li>🎯 Daily Study Goals</li>
 
-</div>
+                    <li>📈 Analytics</li>
 
-</div>
+                    <li>💡 Smart Suggestions</li>
+
+                </ul>
+
+
+                <div class="tags">
+
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">LocalStorage</span>
+
+                </div>
+
+
+                <div class="project-buttons">
+
+                    <a
+                        href="https://humaira-bano.github.io/StudyFlow/"
+                        class="project-btn live-btn"
+                        target="_blank">
+                        🌐 Live Project
+                    </a>
+
+                    <a
+                        href="https://github.com/humaira-bano/StudyFlow"
+                        class="project-btn code-btn"
+                        target="_blank">
+                        💻 View Code
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- CASE STUDY -->
+<section>
 
-<div class="case-study">
+    <div class="section-heading">
 
-<div class="section-heading">
-<span class="small">CASE STUDY</span>
-<h2>How I Built StudyFlow</h2>
-</div>
+        <div class="section-label">CASE STUDY</div>
 
+        <h2>How I Built StudyFlow</h2>
 
-<div class="case-grid">
-
-<div class="case-card">
-<span>🔴</span>
-<h3>Problem</h3>
-<p>
-Students often struggle to organize tasks, stay focused and
-understand their study progress.
-</p>
-</div>
+    </div>
 
 
-<div class="case-card">
-<span>🟢</span>
-<h3>Solution</h3>
-<p>
-I created StudyFlow as a simple productivity system combining
-planning, focus sessions, goals and analytics.
-</p>
-</div>
+    <div class="case-grid">
+
+        <div class="case-card">
+
+            <div class="case-icon">🔴</div>
+
+            <h3>Problem</h3>
+
+            <p>
+                Students often struggle to organize tasks,
+                stay focused and understand their study progress.
+            </p>
+
+        </div>
 
 
-<div class="case-card">
-<span>🧠</span>
-<h3>What I Learned</h3>
-<p>
-I practiced JavaScript logic, DOM manipulation, LocalStorage,
-responsive design and building a complete project.
-</p>
-</div>
+        <div class="case-card">
 
-</div>
+            <div class="case-icon">🟢</div>
 
-</div>
+            <h3>Solution</h3>
 
-</div>
+            <p>
+                I created StudyFlow as a simple productivity system
+                combining planning, focus sessions, goals and analytics.
+            </p>
+
+        </div>
+
+
+        <div class="case-card">
+
+            <div class="case-icon">🟣</div>
+
+            <h3>What I Learned</h3>
+
+            <p>
+                I practiced JavaScript logic, DOM manipulation,
+                LocalStorage, responsive design and building a
+                complete project.
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- SCREENSHOT GALLERY -->
-
 <section>
 
-<div class="container">
+    <div class="section-heading">
 
-<div class="section-heading">
-<span class="small">PROJECT GALLERY</span>
-<h2>StudyFlow Screenshots 📸</h2>
-<p>Explore the different features of my project.</p>
-</div>
+        <div class="section-label">PROJECT SHOWCASE</div>
 
+        <h2>StudyFlow Screenshots 📸</h2>
 
-<div class="screenshot-gallery">
+        <p class="section-subtitle">
+            Explore the different features of my project.
+        </p>
 
+    </div>
 
-<!-- DASHBOARD -->
 
-<div class="screenshot-card">
+    <div class="gallery">
 
-<img src="dashboard.png.png"
-alt="StudyFlow Dashboard">
 
-<div class="screenshot-info">
+        <!-- Dashboard -->
+        <div class="screenshot-card">
 
-<span class="screenshot-number">01</span>
+            <img
+                src="dashboard.png.png"
+                alt="StudyFlow Dashboard">
 
-<h3>📊 Dashboard</h3>
+            <div class="screenshot-info">
 
-<p>
-Overview of tasks, progress, focus time and daily goals.
-</p>
+                <span>01</span>
 
-</div>
+                <h3>📊 Dashboard</h3>
 
-</div>
+                <p>
+                    Overview of tasks, progress, streak and
+                    study productivity.
+                </p>
 
+            </div>
 
-<!-- FOCUS TIMER -->
+        </div>
 
-<div class="screenshot-card">
 
-<img src="focus-timer.png.png"
-alt="StudyFlow Focus Timer">
+        <!-- Focus Timer -->
+        <div class="screenshot-card">
 
-<div class="screenshot-info">
+            <img
+                src="focus-timer.png.png"
+                alt="StudyFlow Focus Timer">
 
-<span class="screenshot-number">02</span>
+            <div class="screenshot-info">
 
-<h3>⏱️ Focus Timer</h3>
+                <span>02</span>
 
-<p>
-Pomodoro timer for focused study sessions.
-</p>
+                <h3>⏱️ Focus Timer</h3>
 
-</div>
+                <p>
+                    25-minute focused study sessions using
+                    the Pomodoro technique.
+                </p>
 
-</div>
+            </div>
 
+        </div>
 
-<!-- DAILY GOAL -->
 
-<div class="screenshot-card">
+        <!-- Daily Goal -->
+        <div class="screenshot-card">
 
-<img src="daily-goal.png.png"
-alt="StudyFlow Daily Goal">
+            <img
+                src="daily-goal.png.png"
+                alt="StudyFlow Daily Goals">
 
-<div class="screenshot-info">
+            <div class="screenshot-info">
 
-<span class="screenshot-number">03</span>
+                <span>03</span>
 
-<h3>🎯 Daily Study Goals</h3>
+                <h3>🎯 Daily Study Goal</h3>
 
-<p>
-Set and track daily study goals for consistent progress.
-</p>
+                <p>
+                    Set and track daily study targets and
+                    maintain consistency.
+                </p>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
 
-<!-- ANALYTICS -->
+        <!-- Analytics -->
+        <div class="screenshot-card">
 
-<div class="screenshot-card">
+            <img
+                src="analytics.png.png"
+                alt="StudyFlow Analytics">
 
-<img src="analytics.png.png"
-alt="StudyFlow Analytics">
+            <div class="screenshot-info">
 
-<div class="screenshot-info">
+                <span>04</span>
 
-<span class="screenshot-number">04</span>
+                <h3>📈 Analytics</h3>
 
-<h3>📈 Analytics</h3>
+                <p>
+                    Understand study activity, completed tasks
+                    and productivity progress.
+                </p>
 
-<p>
-Understand study progress, completed tasks and focus time.
-</p>
+            </div>
 
-</div>
+        </div>
 
-</div>
 
+        <!-- Smart Suggestions -->
+        <div class="screenshot-card">
 
-<!-- SMART SUGGESTIONS -->
+            <img
+                src="smart-suggestions.png.png"
+                alt="StudyFlow Smart Suggestions">
 
-<div class="screenshot-card">
+            <div class="screenshot-info">
 
-<img src="smart-suggestions.png.png"
-alt="StudyFlow Smart Suggestions">
+                <span>05</span>
 
-<div class="screenshot-info">
+                <h3>💡 Smart Suggestions</h3>
 
-<span class="screenshot-number">05</span>
+                <p>
+                    Helpful rule-based suggestions based on
+                    study progress.
+                </p>
 
-<h3>💡 Smart Suggestions</h3>
+            </div>
 
-<p>
-Helpful rule-based suggestions for better study productivity.
-</p>
+        </div>
 
-</div>
 
-</div>
+        <!-- Task Management -->
+        <div class="screenshot-card">
 
+            <img
+                src="task.png.png"
+                alt="StudyFlow Task Management">
 
-<!-- TASK MANAGEMENT -->
+            <div class="screenshot-info">
 
-<div class="screenshot-card">
+                <span>06</span>
 
-<img src="task.png.png"
-alt="StudyFlow Task Management">
+                <h3>✅ Task Management</h3>
 
-<div class="screenshot-info">
+                <p>
+                    Add, edit, complete, filter and manage
+                    study tasks.
+                </p>
 
-<span class="screenshot-number">06</span>
+            </div>
 
-<h3>✅ Task Management</h3>
+        </div>
 
-<p>
-Add, edit, complete and organize study tasks.
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- TECH STACK / LEARNING -->
-
-<section>
-
-<div class="container">
-
-<div class="section-heading">
-<span class="small">TECH STACK</span>
-<h2>What I Learned 💡</h2>
-<p>Skills I practiced while creating StudyFlow.</p>
-</div>
-
-
-<div class="learning-grid">
-
-<div class="learning-card">
-<div>🌐</div>
-<h3>HTML</h3>
-<p>Semantic structure and accessible page layouts.</p>
-</div>
-
-<div class="learning-card">
-<div>🎨</div>
-<h3>CSS</h3>
-<p>Responsive layouts, cards, buttons and UI styling.</p>
-</div>
-
-<div class="learning-card">
-<div>⚡</div>
-<h3>JavaScript</h3>
-<p>DOM manipulation, events and application logic.</p>
-</div>
-
-<div class="learning-card">
-<div>💾</div>
-<h3>LocalStorage</h3>
-<p>Saving tasks and user data inside the browser.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- FUTURE PROJECTS -->
-
-<section>
-
-<div class="container">
-
-<div class="section-heading">
-<span class="small">COMING NEXT</span>
-<h2>More Projects 🚀</h2>
-<p>My development journey doesn't stop here.</p>
-</div>
-
-
-<div class="future-grid">
-
-<div class="future-card">
-
-<div style="font-size:40px;">⚡</div>
-
-<h3>JavaScript Interactive Project</h3>
-
-<p>
-A proper JavaScript project focused on interaction,
-logic and real-world functionality.
-</p>
-
-</div>
-
-
-<div class="future-card">
-
-<div style="font-size:40px;">🐍</div>
-
-<h3>Python Project</h3>
-
-<p>
-A Python project demonstrating programming logic,
-problem-solving and automation.
-</p>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
 <!-- CONTACT -->
-
 <section id="contact">
 
-<div class="container">
+    <div class="section-heading">
 
-<div class="section-heading">
+        <div class="section-label">GET IN TOUCH</div>
 
-<span class="small">CONTACT</span>
+        <h2>Let's Connect 📩</h2>
 
-<h2>Let's Connect 📩</h2>
+        <p class="section-subtitle">
+            I'm open to learning opportunities, projects and collaborations.
+        </p>
 
-<p>
-Have a project, opportunity or idea? I'd love to hear from you.
-</p>
-
-</div>
+    </div>
 
 
-<div class="contact-grid">
+    <div class="contact-grid">
 
 
-<div class="contact-card">
+        <div class="contact-box">
 
-<h3>Get in Touch</h3>
+            <h3>Contact Information</h3>
 
-<div class="contact-item">
-<strong>📧 Email</strong>
-<span>your-email@example.com</span>
-</div>
+            <div class="contact-item">
 
-<div class="contact-item">
-<strong>💼 Availability</strong>
-<span>Open to learning opportunities and projects</span>
-</div>
+                <strong>📧 Email</strong>
 
-<div class="contact-item">
-<strong>📍 Location</strong>
-<span>India</span>
-</div>
+                <a
+                    href="mailto:humairabano1999@gmail.com"
+                    style="color:#1976d2;">
+                    humairabano1999@gmail.com
+                </a>
 
-</div>
+            </div>
 
 
-<div class="contact-form">
+            <div class="contact-item">
 
-<form onsubmit="sendMessage(event)">
+                <strong>💼 Availability</strong>
 
-<input
-type="text"
-id="name"
-placeholder="Your Name"
-required>
+                <p>
+                    Open to learning opportunities,
+                    freelance projects and collaborations.
+                </p>
 
-<input
-type="email"
-id="email"
-placeholder="Your Email"
-required>
+            </div>
 
-<textarea
-id="message"
-placeholder="Your Message"
-required></textarea>
 
-<button
-type="submit"
-class="btn primary-btn">
-📩 Send Message
-</button>
+            <div class="contact-item">
 
-</form>
+                <strong>📍 Location</strong>
 
-</div>
+                <p>India 🇮🇳</p>
 
-</div>
+            </div>
 
-</div>
+        </div>
+
+
+        <div class="contact-box">
+
+            <h3>Send Me a Message</h3>
+
+            <br>
+
+            <form onsubmit="sendMessage(event)">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    required>
+
+                <textarea
+                    id="message"
+                    placeholder="Your Message"
+                    required></textarea>
+
+                <button type="submit">
+                    📩 Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- FOOTER -->
-
 <footer>
 
-<div class="container">
-
-<p>
-© 2026 Humaira. Built with HTML, CSS & JavaScript. 💜
-</p>
-
-</div>
+    <p>
+        © 2026 Humaira. Built with HTML, CSS & JavaScript. 💙
+    </p>
 
 </footer>
 
 
 <script>
-
-/* DARK MODE */
 
 function toggleDarkMode(){
 
@@ -1455,29 +1212,15 @@ function toggleDarkMode(){
 
     localStorage.setItem("portfolioDarkMode", isDark);
 
-    document.getElementById("darkButton").textContent =
-        isDark ? "☀️" : "🌙";
 }
 
 
-/* LOAD DARK MODE */
+if(localStorage.getItem("portfolioDarkMode") === "true"){
 
-window.addEventListener("DOMContentLoaded", function(){
+    document.body.classList.add("dark");
 
-    const savedMode =
-        localStorage.getItem("portfolioDarkMode");
+}
 
-    if(savedMode === "true"){
-
-        document.body.classList.add("dark");
-
-        document.getElementById("darkButton").textContent = "☀️";
-    }
-
-});
-
-
-/* CONTACT FORM */
 
 function sendMessage(event){
 
@@ -1488,10 +1231,9 @@ function sendMessage(event){
 
     alert(
         "Thank you, " + name +
-        "! Your message has been received for this portfolio demo. 💜"
+        "! Your message form has been submitted for testing. 💙"
     );
 
-    event.target.reset();
 }
 
 </script>
